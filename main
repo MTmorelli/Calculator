@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+    float a;
+    float b;
+    float i;
+    int operazione;
+    float risultato;
+    float N;
+    int x;
+    int resto;
+   
+    printf("Inserisci il primo valore\n");
+    scanf("%f",&a);
+    
+    printf("Inserisci il secondo valore\n");
+    scanf("%f",&b);
+    
+    printf("Menu'\nQuale operazione vuoi eseguire?\n");
+    
+    printf("1 = addizione\n");
+    printf("2 = sottrazione\n");
+    printf("3 = moltiplicazione\n");
+    printf("4 = divisione\n");
+    printf("5 = potenza\n");
+    printf("6 = divisione avanzata\n");
+    
+    scanf("%d",&operazione);
+    
+    switch (operazione) {
+        
+        case 1:
+            risultato = a + b;
+            printf("Il risultato Ã¨ %f", risultato);
+            break;
+            
+        case 2:
+            risultato = a - b;
+            printf("Il risultato Ã¨ %f", risultato);
+            break;
+            
+        case 3:
+            risultato = a * b;
+            printf("Il risultato Ã¨ %f", risultato);
+            break;
+            
+        case 4:
+            risultato = a / b;
+            printf("Il risultato Ã¨ %f", risultato);
+            break;
+        
+        case 5:
+            N = 0;
+            x = a;
+            while(N<b-1) {
+                x = x * a;
+                N = N + 1;
+            }
+            risultato = x;
+            printf("Il risultato Ã¨ %f", risultato);
+            break;
+            
+        case 6:
+            risultato = (int) a / (int) b;
+            resto = (int) a % (int) b;
+            printf("Il quoziente e' %5.2f\nIl resto e' %d", risultato, resto);
+            break;
+			
+			default:
+            printf("l'opzione da lei scelta non esiste!");
+            break;
+    }
+system("pause");    
+return 0;
+}
